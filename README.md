@@ -1,77 +1,125 @@
-https://github.com/ahmedsemih/CrowdFunding-dApp/assets/102798814/165084d2-f40c-4bd2-bb54-fcaae466540f
+CrowdFunding-Using-Ethereum-Blockchain
+Welcome to the CrowdFunding-Using-Ethereum-Blockchain project! This repository contains a decentralized crowdfunding platform built on the Ethereum blockchain. The platform enables users to create and contribute to crowdfunding campaigns using smart contracts.
 
-# CrowdFunding dApp
+Table of Contents
+Introduction
+Features
+Getting Started
+Prerequisites
+Installation
+Usage
+Smart Contracts
+Frontend Integration
+Testing
+Deployment
+Contributing
+License
+Contact
+Introduction
+This project demonstrates how to build a crowdfunding application using Ethereum smart contracts. It allows users to:
 
-This is a decentralized crowdfunding application with NextJS and Solidity. In this dapp peoples can create campaigns or donate to them.
+Create crowdfunding campaigns.
+Contribute funds to active campaigns.
+Withdraw funds by campaign creators if goals are met.
+Refund contributors if goals are not met.
+The platform leverages Ethereum's blockchain technology to ensure transparency, security, and immutability of campaign data.
 
-## :bulb: Features
+Features
+Decentralized Campaign Creation: Users can create new crowdfunding campaigns.
+Transparent Funding: All contributions are recorded on the blockchain.
+Goal-Based Funding: Campaigns can have specific funding goals and deadlines.
+Automated Fund Management: Funds are automatically distributed or refunded based on campaign success.
+Getting Started
+Prerequisites
+Before you begin, ensure you have met the following requirements:
 
-- Dark Theme
-- Responsive UI
-- Wallet Authentication
-- Create Campaign
-- Donate or Withdraw Ethereum
-- Decentralized
+Node.js (v14 or later) - Download Node.js
+npm - Comes with Node.js
+Truffle - Ethereum development framework (npm install -g truffle)
+Ganache - Personal Ethereum blockchain for development
+Installation
+Clone the Repository
 
-## :hammer_and_wrench: Built With
+bash
+Copy code
+git clone https://github.com/yourusername/CrowdFunding-Using-Ethereum-Blockchain.git
+cd CrowdFunding-Using-Ethereum-Blockchain
+Install Dependencies
 
-- [Solidity](https://soliditylang.org/) - Smart Contract Language
-- [React](https://reactjs.org/) - JavaScript library for UI
-- [NextJS](https://nextjs.org/) - React Framework
-- [TailwindCSS](https://tailwindcss.com/) - CSS Framework
-- [Hardhat](https://hardhat.org/) Ethereum Development Environment
-- [Waffle](https://ethereum-waffle.readthedocs.io/en/latest/) Smart Contract Test Library
-- [Ethers](https://docs.ethers.org/v5/) Smart Contract Interaction Library
-- [React Icons](https://react-icons.github.io/react-icons/) - Icon Library
-
-
-## :camera_flash: Screenshots
-![cf-ss-1](https://github.com/ahmedsemih/CrowdFunding-dApp/assets/102798814/0db3daea-4ac2-469d-add6-396d91dbf210)
-![cf-ss-2](https://github.com/ahmedsemih/CrowdFunding-dApp/assets/102798814/d0d585bc-2327-4f4c-8c35-d6eecd512968)
-![cf-ss-3](https://github.com/ahmedsemih/CrowdFunding-dApp/assets/102798814/3d9aff93-3f39-44fe-8a6e-feb1dd1800d9)
-![cf-ss-4](https://github.com/ahmedsemih/CrowdFunding-dApp/assets/102798814/aa2272c6-5a91-46b0-aebd-c0fdd6b7e224)
-![cf-ss-5](https://github.com/ahmedsemih/CrowdFunding-dApp/assets/102798814/fbe3626d-9c1a-467d-ba03-5779acfc0762)
-![cf-ss-6](https://github.com/ahmedsemih/CrowdFunding-dApp/assets/102798814/b99f46d8-a93c-4c07-8ae4-00474b6024bf)
-
-## :triangular_flag_on_post: Getting Started
-
-First of all you need to clone the repository and install the dependencies
-
-```shell
-
-git clone https://github.com/ahmedsemih/CrowdFunding-dApp.git
-cd client
+bash
+Copy code
 npm install
-cd ..
-cd smart-contract
-npm install
+Compile Smart Contracts
 
-```
+bash
+Copy code
+truffle compile
+Migrate Smart Contracts
 
-After doing this you must create a project on Alchemy. Then assign the following environment variables
+bash
+Copy code
+truffle migrate
+Usage
+Start Ganache
 
-```shell
+Open Ganache and start a new workspace.
 
---- CLIENT ---
-NEXT_PUBLIC_API_BASE_URL - API url like: http://localhost:3000/api
-NEXT_PUBLIC_PROVIDER_URL - Alchemy url with your API key
-NEXT_PUBLIC_CONTRACT_ADDRESS - Address of your contract ( You will get this after deploy your contract )
-NEXT_PUBLIC_PRIVATE_KEY - Metamask private key
+Deploy Contracts
 
---- SMART CONTRACT ---
-ACCOUNT_PRIVATE_KEY - Metamask private key
-PROJECT_ID - Alchemy API key
+Ensure Ganache is running, then deploy the smart contracts:
 
-```
+bash
+Copy code
+truffle migrate --network development
+Run the Application
 
-And deploy your smart contract then run your client
+Start the development server:
 
-```shell
+bash
+Copy code
+npm start
+Access the App
 
---- SMART CONTRACT ---
-npx hardhat run scripts/deploy.js --network sepolia
+Open your browser and navigate to http://localhost:3000 to interact with the crowdfunding platform.
 
---- CLIENT ---
-npm run dev
+Smart Contracts
+The smart contracts for this project are located in the contracts/ directory. Key contracts include:
 
-```
+Crowdfunding.sol: Handles campaign creation, contributions, and fund management.
+CampaignFactory.sol: Manages multiple crowdfunding campaigns.
+Frontend Integration
+The frontend is developed using React and is located in the frontend/ directory. It interacts with the Ethereum smart contracts through the Web3.js library.
+
+Testing
+To run the tests for the smart contracts, use:
+
+bash
+Copy code
+truffle test
+Make sure to have the Ganache blockchain running before executing tests.
+
+Deployment
+For deployment on the Ethereum mainnet or testnets:
+
+Update the truffle-config.js with the appropriate network configurations.
+Run the migration script with the specified network.
+bash
+Copy code
+truffle migrate --network <network_name>
+Contributing
+We welcome contributions to enhance the platform. Please follow these steps to contribute:
+
+Fork the repository.
+Create a new branch (git checkout -b feature-branch).
+Make your changes.
+Commit your changes (git commit -am 'Add new feature').
+Push to the branch (git push origin feature-branch).
+Create a Pull Request.
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Contact
+For any questions or support, please reach out to:
+
+Email: support@example.com
+GitHub Issues: GitHub Issues
